@@ -13,13 +13,13 @@ class Main {
             System.out.printf("숫자 : ");
 
             try {
-                // saa
                 input = sc.nextInt(); // 대기, 숫자 하나 입력될 때 까지
-                sc.nextLine(); // 버퍼를 비운다.
+                sc.nextLine(); // 버퍼를 비운다. nextInt 후에 딱히 다른 이유가 없다면 버퍼를 비워줘야 한다고 암기해주세요.
                 break;
             }
             catch ( InputMismatchException e ) {
-                sc.nextLine(); // 버퍼를 비운다.
+                // 여기에 버퍼를 비우는 코드가 또 있는 이유 : 여기로 넘어왔다는 것은  sc.nextInt(); 까지만 실행되었다는 듯이기 때문에
+                sc.nextLine();
                 System.out.println("숫자를 입력해주세요.");
             }
         }
